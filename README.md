@@ -27,4 +27,10 @@ cp update_srcinfo.sh .git/hooks/pre-commit
 
 See <https://wiki.archlinux.org/title/AUR_submission_guidelines#Authentication>
 
-- `$ git remote add aur ssh://aur@aur.archlinux.org/elgato-keylight.git`
+```sh
+git remote add aur ssh://aur@aur.archlinux.org/elgato-keylight.git
+git remote -vv
+git checkout -b aur-master aur/master
+git rebase master aur-master
+git push aur master-aur:master
+```
